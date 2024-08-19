@@ -1,3 +1,4 @@
+#класс для записи заметок 
 class Memo < Post
 
   def read_from_console
@@ -5,11 +6,13 @@ class Memo < Post
 
     line = nil
 
+    #пока не встретили слово end, записываем строки в массив 
     while line != "end" do
       line = STDIN.gets.chomp 
       @text << line
     end
 
+    # удаляем послднюю сроку - которая "end"
     @text.pop 
   end
 
